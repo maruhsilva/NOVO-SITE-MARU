@@ -4,6 +4,19 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: aqua;
+    height: 10px;
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding: var(--scroll-padding, 9rem);
@@ -11,9 +24,9 @@ html {
 
 body {
     background-image: url(closeup-computer-screen-software-developer-typing-programming-language-it-startup-agency-display-concept-system-engineer-writing-source-code-scrolling-text-database-functions-script.jpg);
-    background-size: 300%;
+    background-size: 200%;
     background-attachment: fixed;
-    width: 100%;
+    max-width: 100%;
     height: 100vh;
 }
 
@@ -141,10 +154,6 @@ nav li a:hover {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.nav, .descricao, .imagem, .precos {
-    visibility: hidden;
-}
-
 /* .slider {
     margin: 0 auto;
     width: 1250px;
@@ -228,17 +237,29 @@ nav li a:hover {
 } */
 
 /* SERVIÇOS */
+.servicos {
+    background-color: #10caca;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
 .servicos h1 {
     color: white;
-    padding-top: 3%;
-    padding-bottom: 3%;
+    padding-bottom: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 3rem;
-    background-color: black
+    font-size: 3rem;    
+}
+
+.servicos img {
+    width: 1200px;
+    padding-bottom: 5%;
+    border-radius: 40px;
 }
 
 /* PREÇOS */
@@ -254,7 +275,7 @@ nav li a:hover {
 }
 
 .precos ul {
-    background-color: rgb(16, 202, 202);
+    background-color: #10caca;
     padding: 2%;
     width: 300px;
     border-radius: 10%;
@@ -302,32 +323,97 @@ nav li a:hover {
 .precos .fa-solid, .fa-brands {
     padding-right: 10%;
     font-size: 1.5rem;
-    color: rgb(77, 24, 131);
+    color: #4d1883;
     border-radius: 60%;
 }
 
 /* CONTATO */
 
+.contato {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(77,24,131);
+    background: linear-gradient(90deg, rgba(77,24,131,1) 35%, rgba(16,202,202,1) 100%);
+}
+
+.contato1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5%;
+    margin-left: 15%;
+}
+
+.contato1 li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: hsl(0, 0%, 100%, .8);
+    min-width: 100%;
+}
+
+.contato1 p {
+    font-size: 1.2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-bottom: 1%;
+    text-align: justify;
+    max-width: 40%;
+}
+
+.contato1 .links {
+    display: flex;
+    padding: 3%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 50%;
+    
+}
+
+.links .fa-brands, .fa-regular {
+    font-size: 2rem;
+    color: white;
+}
+
+.contato1 a, .contato a i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    flex-direction: column;
+    text-decoration: none;
+    color: white;
+}
+
+.contato1 a:hover , .contato a i:hover {
+    color: #10caca;
+    transition: all .3s ease-in-out;
+}
+
 .box {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(16, 202, 202);
     padding: 5%;
     flex-direction: column;
-    
+    margin-right: 15%;
 }
 
 form {
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
-    padding: 1.5%;
+    border: 1px solid hsl(0, 0%, 100%, .8);
+    padding: 8%;
     border-radius: 20px;
 }
 
 .box p {
-    color: black;
+    color: hsl(0, 0%, 100%, .8);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
     padding: 8%;
@@ -338,6 +424,7 @@ form {
 
 article h1 {
     border: none;
+    color: hsl(0, 0%, 100%, .8);
     background-color: transparent;
     font-size: 2rem;
     text-align: center;
@@ -346,15 +433,16 @@ article h1 {
 
 .inputsingle {
     position: relative;
-    padding-bottom: 8%;
+    padding-bottom: 9%;
 }
 
 .input {
     width: 100%;
     background-color: transparent;
     border: 0;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid hsl(0, 0%, 100%, .8);
     outline: none;
+    color: white;
 }
 
 .inputsingle label {
@@ -362,6 +450,7 @@ article h1 {
     left: 0;
     bottom: 38px;
     cursor: text;
+    color: hsl(0, 0%, 100%, .8);
 }
 
 label {
@@ -380,11 +469,18 @@ label {
     align-items: center;
     justify-content: center;
     border: none;
-    padding: 5px;
+    padding: 10px;
     font-size: 15px;
     cursor: pointer;
+    border-radius: 10px;
     background-color: rgb(77, 24, 131);
     color: white;
+}
+
+.btn input:hover {
+    color: rgb(77, 24, 131);
+    background-color: #10caca   ;
+    transition: all .3s ease-in-out;
 }
 
 form .inputsingle .input:focus ~ label,
@@ -395,3 +491,242 @@ form .inputsingle .input:valid ~ label {
     color: rgb(77, 24, 131);
 }
 
+/* FOOTER */
+
+footer {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+    padding: 3%;
+    background-color: black;
+}
+
+footer h2 {
+    font-size: 1.2rem;
+    padding-bottom: 6%;
+    color: hsl(0, 0%, 100%, .8);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+footer h4 {
+    font-size: 1rem;
+    padding-bottom: 13%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: hsl(0, 0%, 100%, .8);
+}
+
+footer iframe {
+    background-color: rgb(16, 202, 202);
+    padding: .5%;
+}
+
+footer article {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+footer ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+footer li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+footer ul:not(:last-child) {
+    margin-right: 30px;
+}
+
+footer li p {
+    padding-bottom: 40%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: hsl(0, 0%, 100%, .8);
+}
+
+footer li a {
+    text-decoration: none;
+    padding-bottom: 15%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: hsl(0, 0%, 100%, .8);
+}
+
+footer li a:hover {
+    color: rgb(16, 202, 202);
+    transition: all .3s ease-in-out;
+}
+
+footer .copy {
+    font-size: .8rem;
+    margin-top: 140%;
+}
+
+footer .copy .fa-regular {
+    font-size: .8rem;
+    color: hsl(0, 0%, 100%, .8);
+}
+
+/* .nav, .descricao, .imagem, .servicos, .precos, .contato, .footer {
+    visibility: hidden;
+} */
+
+@media (max-width: 1000px) { 
+    
+    html {
+        scroll-behavior: smooth;
+        scroll-padding: var(--scroll-padding, 2.5rem);
+    }
+
+    nav {
+        top: 0px;
+    }
+
+    nav li a {
+        font-size: 1rem;
+    }
+
+    .home {
+        padding-top: 20%;
+    }
+
+    .home img {
+        height: 400px;
+    }
+
+    .home h1 {
+        font-size: 3rem;
+    }
+
+    .descricao {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6%;
+    }
+
+    .descricao h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        min-width: 100%;
+    }
+
+    .descricao p {
+        min-width: 100%;
+        font-size: 1.1rem;
+    }
+
+    .descricao img {
+        width: 350px;
+        padding-top: 15%;
+    }
+
+    .servicos h1 {
+        font-size: 1.5rem;
+    }
+
+    .servicos img {
+        width: 350px;
+        border-radius: 0;
+    }
+
+    .precos {
+        flex-direction: column;
+        padding: 15%;
+    }
+
+    .precos ul {
+        margin-bottom: 10%;
+    }
+    .precos ul li p {
+        margin-bottom: 10%;
+    }
+
+    .contato {
+        flex-direction: column;
+        padding-top: 10%;
+        gap: 0;
+    }
+
+    .contato1 {
+        max-width: 100%;
+        padding-bottom: 0;
+        margin: 0;
+    }
+
+    .contato1 .links {
+        gap: 30%;
+    }
+    
+    .contato1 p {
+        min-width: 100%;
+        padding: 5%;
+    }
+
+    .box {
+        padding-bottom: 15%;
+        padding-top: 15%;
+        margin: 0;
+    }
+
+    form .inputsingle .input:focus ~ label,
+    form .inputsingle .input:valid ~ label {
+    transform: translateY(-130%);
+    font-size: .65rem;
+    transition: all .3s ease-in-out;
+    color: hsl(0, 0%, 100%, .8);
+    }
+
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1%;
+        background-color: black;
+    }
+
+    footer h2 {
+        font-size: .8rem;
+        display: none;
+    }
+
+    footer h4 {
+        font-size: .6rem;
+        max-width: 90%;
+        display: none;
+    }
+
+    footer p {
+        font-size: .8rem;
+        padding-bottom: 5%;
+        display: none;
+    }
+
+    footer a {
+        font-size: .7rem;
+        padding-bottom: 0;
+        display: none;
+    }
+
+    footer iframe {
+        width: 100px;
+        height: 100px;
+        display: none;
+    }
+
+    footer .copy {
+        margin-top: 0;
+        display: block;
+        padding-bottom: 0;
+        min-width: 100%;
+        margin-right: 60%;
+    }
+
+}
