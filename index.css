@@ -39,8 +39,6 @@ nav {
     min-width: 100%;
     background-color: black;
     z-index: 999;
-    animation: aparecer;
-    animation-duration: 3.5s;
 }
 
 nav li {
@@ -48,6 +46,8 @@ nav li {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    animation: aparecer;
+    animation-duration: 3.5s;
 }
 
 nav li a {
@@ -731,9 +731,11 @@ footer .copy .fa-regular {
     footer .copy {
         margin-top: 0;
         display: block;
-        padding-bottom: 0;
+        padding-top: 5%;
+        padding-bottom: 5%;
         min-width: 100%;
         margin-right: 60%;
+        
     }
 
 }
