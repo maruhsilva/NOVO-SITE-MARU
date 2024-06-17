@@ -600,11 +600,10 @@ footer .copy .fa-regular {
 
     .home img {
         height: 373px;
-        margin-top: -30%;
     }
 
-    .home .fa-solid {
-        padding-top: 100%;
+    .home a .fa-solid {
+        padding-top: 190px;
     }
 
     .home h1 {
