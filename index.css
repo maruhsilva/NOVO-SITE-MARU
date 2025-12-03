@@ -15,6 +15,14 @@
     box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Essa é a chave: corta o que vazar lateralmente */
+    margin: 0;
+    padding: 0;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -467,9 +475,12 @@ footer {
 @media (max-width: 768px) {
     
     /* Botão do Menu (Hambúrguer) */
-    .menu-toggle {
-        position: static; /* Volta ao fluxo normal do flex */
-        transform: none;
+    .menu-toggle { 
+        display: block; 
+        color: white; 
+        font-size: 1.4rem; 
+        cursor: pointer; 
+        z-index: 1001; /* Fica acima do menu aberto */
     }
 
     .nav .logo img {
@@ -529,8 +540,18 @@ footer {
     .text-box h2 { font-size: 2rem; }
     .contato-grid { grid-template-columns: 1fr; }
     
+    
     /* Remove efeito 3D e borda no mobile se necessário */
     .price-card.destaque { transform: none; border-color: var(--glass-border); }
+
+    .price-card::before {
+        opacity: 1 !important;
+    }
+    
+    /* Opcional: Reduz um pouco a velocidade no celular para não distrair tanto */
+    .price-card::before {
+        animation-duration: 6s; 
+    }
 }
 
 /* --- Botão Flutuante WhatsApp --- */
